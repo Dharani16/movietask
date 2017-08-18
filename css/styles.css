@@ -1,0 +1,59 @@
+/*logoImages*/
+.logoImage{
+	width: 130px;
+	height: 50px;
+}
+
+/*navigation menu bar*/
+.navbar-default{
+	background-color: #FFFFFF;
+	color: #000000;
+	border-style: none;
+}
+
+.navbar-nav li{
+	padding-right: 50px;
+}
+
+.navbar-default .navbar-nav li a{
+	background-color: #FFFFFF;
+	color: black;
+}
+
+.navbar-default .navbar-nav li a:hover{
+	background-color: #FFFFFF;
+	color: gray;
+}
+/*background */
+.background{
+	
+}
+/*gradient color*/
+#backgroundGradientColor{
+    height: 700px;      
+    background: -webkit-linear-gradient(left, red , yellow); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, red, yellow); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, red, yellow); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, red , yellow); /* Standard syntax (must be last) */
+}
+
+/*about Part*/
+.aboutPart{
+	height: 300px;
+	/*background-color: #f1f1f1;*/	
+}
+/*border-left: 5px solid blue;font-family: sans-serif;*/
+.aboutHeadingTag{
+	text-align: center;
+	padding-top: 20px;
+}
+#aboutParaIdOne,#aboutParaIdTwo,#aboutParaIdThree{
+	text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*contact us*/
+.contactWell{
+	background-color: white;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Movie Site</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  		<!-- Attached external css and js -->
+  		<script type="text/javascript" src="js/movieDatabase.js"></script>
+  		<!-- css animate from w3school -->
+  		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  		<link rel="stylesheet" type="text/css" href="css/styles.css">
+  		
+	</head>
+<body>
+	<!-- Header -->
+	<header>
+		<div class="container ">
+			<!-- Logo part -->
+			<div class="col-lg-4">
+				<img src="images/logo.png" alt="Image not loaded" class="logoImage">
+			</div>
+			<!-- Navigation menu bar -->
+			<div class="col-lg-8">
+				<nav class="navbar navbar-default"> 
+    				<ul class="nav navbar-nav" style="float:right">
+      					<li id="homeId"><a href="index.html">Home</a></li>
+      					<li id="aboutId"><a href="about.html">About Us</a></li>
+      					<li id="contactId"><a href="contact.html">Contact Us</a></li>
+    				</ul>  					
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<!-- main content -->
+	<section> 
+		<div class="container">
+			<div class="sectionPart" >
+				<div class="row" >
+					<div class="col-lg-12 well" id="contentLeftPart">
+						<div class="background">
+							<h3 style="margin-left: 20px;">Movies list</h3>
+							<ul id="movieList" style="list-style-type: none;"></ul>
+						</div>	
+					</div>
+					<!-- Movie details images/logo.png-->
+					<!-- <div class="w3-animate-right"></div> -->
+
+					<div class="col-lg-12" id="contentRightPart">
+						<div class="w3-animate-right">
+						<img id="moviePoster" class="img-responsive" src="" alt="" width="460" height="345">
+						<!-- movie name -->
+						<div class="row">
+							<div class="col-lg-4">
+								<label><h4 id="movieNameTitle"></h4></label>
+							</div>
+							<div class="col-lg-8">
+								<h4 id="movieNameId"></h4>
+							</div>
+						</div>
+						<!-- movie budget -->
+						<div class="row">
+							<div class="col-lg-4">
+								<label><p id="movieBudgetTitle"></p></label>
+							</div>
+							<div class="col-lg-8">
+								<p id="movieBudgetId"></p>
+							</div>
+						</div>
+						<!-- movie overview -->
+						<div class="row">
+							<div class="col-lg-4">
+								<label><p id="movieOverviewTitle"></p></label>
+							</div>
+							<div class="col-lg-8">
+								<p id="movieOverviewId"></p>
+							</div>
+						</div>
+						<!-- movie release date -->
+						<div class="row">
+							<div class="col-lg-4">
+								<label><p id="movieReleaseTitle"></p></label>
+							</div>
+							<div class="col-lg-8">
+								<p id="movieReleaseId"></p>
+							</div>
+						</div>	
+						</div>				
+					</div>	
+ 				</div>	
+			</div>			
+		</div>
+	</section>
+
+</body>
+</html>
+
+<!-- http://www.omdbapi.com/?apikey=[yourkey]&
+57625176
+
+http://www.omdbapi.com/?apikey=57625176&s=batman
+ 
+style="border: 1px solid #e2dddd; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)"
+
+-->
