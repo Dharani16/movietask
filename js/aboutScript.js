@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$.getJSON("aboutJson.json",function(data){
+	$.getJSON("json/aboutJson.json",function(data){
 		$.each(data.about,function(key,value){
 			console.log(key, value);
 				//alert("Name : "+this['name'] +" / " +"Description : "+this['first']);
