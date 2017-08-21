@@ -1,6 +1,9 @@
 
 // Display movie list
 $(document).ready(function(){
+	$("#homeId").css("border-bottom","3px solid #66d9ff");
+	$("#aboutId").css("border-bottom","3px solid #FFFFFF");
+	$("#contactId").css("border-bottom","3px solid #FFFFFF");	
 	$.getJSON("http://api.themoviedb.org/3/discover/movie?api_key=22d8568621673d1336e8d0d1fb253821",function(data){
 		$.each(data.results,function(key,value){
 			$("#movieList").append('<li><a href="#" onClick="callMovie('+value.id+'); return false;">' + value.title + '</a></li>');			
@@ -36,7 +39,11 @@ function callMovie(movieId) {
 
 // script for about us
 $(document).ready(function(){
+
 	$("#aboutId").click(function(){
+		$("#homeId").css("border-bottom","3px solid #FFFFFF");
+		$("#aboutId").css("border-bottom","3px solid #66d9ff");
+		$("#contactId").css("border-bottom","3px solid #FFFFFF");
 		$.getJSON("json/aboutJson.json",function(data){
 			$.each(data.about,function(key,value){
 				$("#homeSectionPart .row").html(aboutUsWrapper(value.title, value.content));
@@ -53,6 +60,9 @@ function aboutUsWrapper(title, content) {
 // contact us page
 $(document).ready(function(){
   	$("#contactId").click(function(){
+  	  $("#homeId").css("border-bottom","3px solid #FFFFFF");
+	  $("#aboutId").css("border-bottom","3px solid #FFFFFF");
+      $("#contactId").css("border-bottom","3px solid #66d9ff");
 	  $("div#homePartDummy").html( 
 		    $("<form/>",{action:'#', method:'#'}).append(   
 		    $("<input/>", {type:'text', id:'vname', name:'name', placeholder:'Your Name'}), 
@@ -71,6 +81,5 @@ $(document).ready(function(){
 	    )  
 	}); 
 });
-
 
 
