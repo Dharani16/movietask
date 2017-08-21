@@ -1,7 +1,10 @@
 /*logoImages*/
+body{
+	min-height: 100vh;
+}
 .logoImage{
 	width: 130px;
-	height: 50px;
+	height: 130px;
 }
 
 /*navigation menu bar*/
@@ -17,44 +20,69 @@
 
 .navbar-default .navbar-nav li a{
 	background-color: #FFFFFF;
-	color: black;
+	color:  black;
+	font-style: bold;
 }
 
 .navbar-default .navbar-nav li a:hover{
-	background-color: #FFFFFF;
-	color: gray;
-}
-/*background */
-.background{
 	
+	background-color: #cceeff;
+	color: #33ccff;
+	font-style: bold;
 }
+
 /*gradient color*/
-#backgroundGradientColor{
-    height: 700px;      
-    background: -webkit-linear-gradient(left, red , yellow); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, red, yellow); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, red, yellow); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, red , yellow); /* Standard syntax (must be last) */
+#bgGradientColor{
+    background: -webkit-linear-gradient(left, #66d9ff , #99e6ff, #4dd2ff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #66d9ff , #99e6ff, #4dd2ff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #66d9ff , #99e6ff, #4dd2ff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #66d9ff , #99e6ff, #4dd2ff); /* Standard syntax (must be last) */
 }
 
-/*about Part*/
-.aboutPart{
-	height: 300px;
-	/*background-color: #f1f1f1;*/	
+#homePartDummy{
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.10);
 }
-/*border-left: 5px solid blue;font-family: sans-serif;*/
-.aboutHeadingTag{
+#movieList{
+	list-style-type: none;
+}
+/*-------------------------------------------------------------
+			contact us form stylesheet
+---------------------------------------------------------------*/
+div#homePartDummy input{
+	width:605px;
+	height:35px;
+	margin-left: 300px;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+div#homePartDummy textarea{
+	margin-left: 300px;
+	padding: 10px;
+}
+div#homePartDummy input#submit{
+	background-color:#3fb8e8;
+	color:#fff;
+	height:30px;
+	font-size:16px;
+	width:80px;
+	margin-top: -10px;
+	margin-left: 570px;
+	margin-bottom: 10px;
+}
+#full{
+    min-height:100vh;
+    position: relative;
+}
+.footerSection{
+	background-color: black;
+	height: 40px;
+	width: 100%;
+	bottom: 0;
+	margin-top: 10px;
+}
+.footerSection p{
+	color: white;
 	text-align: center;
-	padding-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
-#aboutParaIdOne,#aboutParaIdTwo,#aboutParaIdThree{
-	text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-/*contact us*/
-.contactWell{
-	background-color: white;
-}
-

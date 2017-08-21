@@ -9,9 +9,11 @@ $(document).ready(function(){
 });
 
 function callMovie(movieId) {
-	//https://api.themoviedb.org/3/movie/550?api_key=22d8568621673d1336e8d0d1fb253821
-	$("#contentLeftPart").css("width","50%");
+	//https://api.themoviedb.org/3/movie/550?api_key=22d8568621673d1336e8d0d1fb253821	
+	$("#contentLeftPart").css({"width": "50%", "border": "1px solid gray"});
 	$("#contentRightPart").css("width","50%");
+	//$("#contentLeftPart”).addClass("col-md-6 col-xs-12");
+	//$("#contentRightPart").addClass("col-md-6 col-xs-12");
 	var url = 'https://api.themoviedb.org/3/movie/'+movieId+'?api_key=22d8568621673d1336e8d0d1fb253821';
 	//console.log("success url -> "+url);
 	$.getJSON(url,function(data){
@@ -29,7 +31,6 @@ function callMovie(movieId) {
 
 		$("#movieReleaseTitle").html("Released Date");
 		$("#movieReleaseId").html(data.release_date);
-
 	});				
 }
 
@@ -45,7 +46,7 @@ $(document).ready(function(){
 });
 
 function aboutUsWrapper(title, content) {
-	var output = '<div class="about-us-section"> <span class="title">' + title + ' </br> </span> <span class="content">' + content + '</span> </div>';
+	var output = '<div class="about-us-section"> <span class="content" style="text-align: center;padding:10px;">' + content + '</span> </div>';
 	return output;
 }
 
@@ -60,10 +61,16 @@ $(document).ready(function(){
 		    $("<input/>", {type:'text', id:'vemail', name:'email', placeholder:'Your Email'}),
 		    $("<br/>"),
 		    $("<br/>"),
-		    $("<textarea/>", {rows:'5px', cols:'27px', type:'text', id:'vmsg', name:'msg', placeholder:'Message'}),
+		    $("<input/>", {type:'number', id:'vname', name:'contact', placeholder:'Contact number'}), 
+		    $("<br/>"),
+		    $("<br/>"),
+		    $("<textarea/>", {rows:'4px', cols:'63px', type:'text', id:'vmsg', name:'msg', placeholder:'Feedback'}),
 		    $("<br/>"),
 		    $("<br/>"),
 		    $("<input/>", {type:'submit', id:'submit', value:'Submit'}))
 	    )  
 	}); 
 });
+
+
+
