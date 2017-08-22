@@ -13,10 +13,8 @@ $(document).ready(function(){
 
 function callMovie(movieId) {
 	//https://api.themoviedb.org/3/movie/550?api_key=22d8568621673d1336e8d0d1fb253821	
-	$("#contentLeftPart").css({"width": "50%", "border": "1px solid gray"});
-	$("#contentRightPart").css("width","50%");
-	//$("#contentLeftPart”).addClass("col-md-6 col-xs-12");
-	//$("#contentRightPart").addClass("col-md-6 col-xs-12");
+	$("#contentLeftPart").addClass("col-md-6 col-xs-12");
+	$("#contentRightPart").addClass("col-md-6 col-xs-12");
 	var url = 'https://api.themoviedb.org/3/movie/'+movieId+'?api_key=22d8568621673d1336e8d0d1fb253821';
 	//console.log("success url -> "+url);
 	$.getJSON(url,function(data){
@@ -39,7 +37,6 @@ function callMovie(movieId) {
 
 // script for about us
 $(document).ready(function(){
-
 	$("#aboutId").click(function(){
 		$("#homeId").css("border-bottom","3px solid #FFFFFF");
 		$("#aboutId").css("border-bottom","3px solid #66d9ff");
@@ -59,7 +56,7 @@ function aboutUsWrapper(title, content) {
 
 // contact us page
 $(document).ready(function(){
-  	$("#contactId").click(function(){
+  	$("#contactId").click(function(){  		
   	  $("#homeId").css("border-bottom","3px solid #FFFFFF");
 	  $("#aboutId").css("border-bottom","3px solid #FFFFFF");
       $("#contactId").css("border-bottom","3px solid #66d9ff");
