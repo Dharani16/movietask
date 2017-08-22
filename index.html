@@ -27,8 +27,8 @@
 	 			<div class="collapse navbar-collapse" id="myNavbar">
 	 				<ul class="nav navbar-nav navbar-right">
 	   					<li><a href="index.html" id="homeId" >Home</a></li>
-	    				<li><a href="#" id = "aboutId"  >About us</a></li>
-	        			<li><a href="#" id = "contactId" >Contact us</a></li>
+	    				<li><a href="#" onclick="callAboutUs();return false;" id = "aboutId"  >About us</a></li>
+	        			<li><a href="#" onclick="callContactUs();return false;" id = "contactId" >Contact us</a></li>
 	      			</ul>	
 	   			</div>	  		        
 	  		</nav>
@@ -42,7 +42,6 @@
 				<div class="row" id="homePartDummy" style="" >
 					<div class="col-lg-12 col-xs-12" id="contentLeftPart">
 						<div class="background">
-							<!-- <h3 style="margin-left: 20px;">Movies list</h3> -->
 							<ul id="movieList" style=""></ul>
 						</div>	
 					</div>

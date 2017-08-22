@@ -24,11 +24,15 @@ body{
 	font-style: bold;
 }
 
-.navbar-default .navbar-nav li a:hover{
-	
+.navbar-default .navbar-nav li a:hover{	
 	background-color: #cceeff;
 	color: #33ccff;
 	font-style: bold;
+}
+
+.navbar-default .navbar-nav li a.active{	
+	background-color: white;
+	border-bottom:3px solid #66d9ff;
 }
 
 /*gradient color*/
@@ -49,7 +53,7 @@ body{
 			contact us form stylesheet
 ---------------------------------------------------------------*/
 div#homePartDummy input{
-	width:605px;
+	width:480px;
 	height:35px;
 	margin-left: 300px;
 	padding-left: 10px;

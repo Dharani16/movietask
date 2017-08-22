@@ -1,10 +1,13 @@
-
+var API_URL = "http://api.themoviedb.org/3/discover/movie?api_key=22d8568621673d1336e8d0d1fb253821";
+var API_KEY = "?api_key=22d8568621673d1336e8d0d1fb253821";
+var URL_MOVIE = "https://api.themoviedb.org/3/movie/";
+var URL_IMAGE = "https://image.tmdb.org/t/p/w500";
 // Display movie list
-$(document).ready(function(){
-	$("#homeId").css("border-bottom","3px solid #66d9ff");
-	$("#aboutId").css("border-bottom","3px solid #FFFFFF");
-	$("#contactId").css("border-bottom","3px solid #FFFFFF");	
-	$.getJSON("http://api.themoviedb.org/3/discover/movie?api_key=22d8568621673d1336e8d0d1fb253821",function(data){
+$(document).ready(function(){	
+	$("#homeId").addClass('active');
+	$("#aboutId").removeClass('active');
+	$("#contactId").removeClass('active');
+	$.getJSON(API_URL,function(data){
 		$.each(data.results,function(key,value){
 			$("#movieList").append('<li><a href="#" onClick="callMovie('+value.id+'); return false;">' + value.title + '</a></li>');			
 		});
@@ -12,14 +15,11 @@ $(document).ready(function(){
 });
 
 function callMovie(movieId) {
-	//https://api.themoviedb.org/3/movie/550?api_key=22d8568621673d1336e8d0d1fb253821	
-	$("#contentLeftPart").addClass("col-md-6 col-xs-12");
-	$("#contentRightPart").addClass("col-md-6 col-xs-12");
-	var url = 'https://api.themoviedb.org/3/movie/'+movieId+'?api_key=22d8568621673d1336e8d0d1fb253821';
-	//console.log("success url -> "+url);
+	$("#contentLeftPart").css("width","50%");
+	$("#contentRightPart").css("width","50%");
+	var url = URL_MOVIE+movieId+API_KEY;
 	$.getJSON(url,function(data){
-		var image = 'https://image.tmdb.org/t/p/w500'+data.backdrop_path;
-		console.log("Got image url --->"+image);
+		var image = URL_IMAGE+data.backdrop_path;
 		$("#moviePoster").attr("src",image).attr('width', 600).attr('height', 300);
 		$("#movieNameTitle").html("Movie Name");
 		$("#movieNameId").html(data.original_title);
@@ -35,32 +35,29 @@ function callMovie(movieId) {
 	});				
 }
 
-// script for about us
-$(document).ready(function(){
-	$("#aboutId").click(function(){
-		$("#homeId").css("border-bottom","3px solid #FFFFFF");
-		$("#aboutId").css("border-bottom","3px solid #66d9ff");
-		$("#contactId").css("border-bottom","3px solid #FFFFFF");
+// aboutUs callback 
+function callAboutUs(){
+		$("#homeId").removeClass('active');
+		$("#aboutId").addClass('active');
+		$("#contactId").removeClass('active');
 		$.getJSON("json/aboutJson.json",function(data){
-			$.each(data.about,function(key,value){
-				$("#homeSectionPart .row").html(aboutUsWrapper(value.title, value.content));
-			});
-		});	
+		$.each(data.about,function(key,value){
+			$("#homeSectionPart .row").html(aboutUsWrapper(value.title, value.content));
+		});
 	});	
-});
+}
 
 function aboutUsWrapper(title, content) {
 	var output = '<div class="about-us-section"> <span class="content" style="text-align: center;padding:10px;">' + content + '</span> </div>';
 	return output;
 }
 
-// contact us page
-$(document).ready(function(){
-  	$("#contactId").click(function(){  		
-  	  $("#homeId").css("border-bottom","3px solid #FFFFFF");
-	  $("#aboutId").css("border-bottom","3px solid #FFFFFF");
-      $("#contactId").css("border-bottom","3px solid #66d9ff");
-	  $("div#homePartDummy").html( 
+// contactus callback
+function callContactUs(){
+	$("#homeId").removeClass('active');
+	$("#aboutId").removeClass('active');
+	$("#contactId").addClass('active');
+	$("div#homePartDummy").html( 
 		    $("<form/>",{action:'#', method:'#'}).append(   
 		    $("<input/>", {type:'text', id:'vname', name:'name', placeholder:'Your Name'}), 
 		    $("<br/>"),
@@ -76,7 +73,6 @@ $(document).ready(function(){
 		    $("<br/>"),
 		    $("<input/>", {type:'submit', id:'submit', value:'Submit'}))
 	    )  
-	}); 
-});
+}
 
 
